@@ -1,0 +1,267 @@
+/* Terminal Theme Override + Geth-inspired Styling */
+
+:root {
+  /* Core theme variables - these override Terminal theme */
+  --background: #0e1621;
+  --foreground: #e0e0e0;
+  --accent: #00ffa3;
+  --border-color: #00ffa3;
+  --code-border: #008c58;
+  --radius: 4px;
+
+  /* Custom variables for our design */
+  --darker-bg: #060c13;
+  --container-bg: rgba(14, 26, 39, 0.9);
+  --darker-green: #00cc7a;
+  --glow-effect: 0 0 10px rgba(0, 255, 163, 0.5);
+  --grid-gap: 20px;
+  --subtle-border: rgba(0, 255, 163, 0.2);
+}
+
+/* Core typography */
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: 'Fira Code', 'Courier New', monospace;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Links */
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  color: var(--darker-green);
+  text-shadow: 0 0 8px rgba(0, 255, 163, 0.4);
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--accent);
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* Logo override for Terminal theme */
+.logo {
+  background: var(--accent) !important;
+  color: var(--darker-bg) !important;
+  text-shadow: none !important;
+  border-radius: var(--radius);
+}
+
+/* Header modifications */
+.header__logo::after {
+  background: repeating-linear-gradient(90deg, var(--accent), var(--accent) 2px, transparent 0, transparent 10px) !important;
+}
+
+/* Homepage Grid Layout */
+.main-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--grid-gap);
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 20px;
+}
+
+.container {
+  background-color: var(--container-bg);
+  border: 1px solid var(--accent);
+  box-shadow: 0 0 20px rgba(0, 255, 163, 0.1);
+  padding: 25px;
+  position: relative;
+  margin-bottom: 20px;
+  border-radius: var(--radius);
+  transition: all 0.3s ease;
+}
+
+.container:hover {
+  box-shadow: 0 0 30px rgba(0, 255, 163, 0.2);
+  border-color: var(--accent);
+}
+
+.intro-box, .about-box {
+  grid-column: 1;
+}
+
+.intro-box {
+  grid-row: 1;
+}
+
+.about-box {
+  grid-row: 2;
+}
+
+.logo-box {
+  grid-column: 1;
+  grid-row: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.links-box {
+  grid-column: 2;
+  grid-row: 1 / span 3;
+}
+
+/* Neon Buttons */
+.neon-button {
+  background-color: transparent;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  padding: 8px 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 12px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  text-align: center;
+  display: inline-block;
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+
+.neon-button:hover {
+  background-color: var(--accent);
+  color: var(--darker-bg);
+  box-shadow: var(--glow-effect);
+  transform: translateY(-1px);
+}
+
+/* Quick Links */
+.quick-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--subtle-border);
+}
+
+.quick-link:last-child {
+  border-bottom: none;
+}
+
+.quick-link h3 {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+.quick-link p {
+  margin: 0;
+  opacity: 0.8;
+}
+
+/* Logo */
+.geometric-logo {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 0 10px rgba(0, 255, 163, 0.5));
+}
+
+/* Footer */
+.footer {
+  margin-top: 40px;
+  border-top: 1px solid var(--subtle-border);
+  padding: 20px 0;
+  opacity: 0.9;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-links a {
+  margin-right: 20px;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.copyright {
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+/* Override Terminal theme post styling */
+.post {
+  border-bottom: 1px solid var(--subtle-border) !important;
+}
+
+.post-title {
+  border-bottom: 3px dotted var(--accent) !important;
+}
+
+.post-title::after {
+  border-bottom: 3px dotted var(--accent) !important;
+}
+
+/* Code syntax highlighting improvements */
+code {
+  background: var(--darker-bg) !important;
+  border-color: var(--code-border) !important;
+}
+
+pre {
+  background: var(--darker-bg) !important;
+  border-color: var(--subtle-border) !important;
+}
+
+.highlight {
+  border-color: var(--code-border) !important;
+}
+
+/* Tables */
+table, th, td {
+  border: 1px solid var(--subtle-border);
+}
+
+th {
+  background-color: var(--darker-bg);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .main-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .links-box {
+    grid-column: 1;
+    grid-row: auto;
+  }
+  
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .footer-links {
+    margin-bottom: 15px;
+  }
+  
+  .footer-links a {
+    margin: 0 10px;
+  }
+}
+
+/* Dark mode enhancements */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0e1621;
+    --foreground: #e0e0e0;
+  }
+}

@@ -1,3 +1,55 @@
-baseURL = 'https://example.org/'
-languageCode = 'en-us'
-title = 'My New Hugo Site'
+baseURL = "https://Pew-X.github.io/"
+languageCode = "en-us"
+title = "Pew-X Tech Journal"
+theme = "terminal"
+publishDir = "docs"
+
+[params]
+  # terminal theme params
+  contentTypeName = "posts"
+  themeColor = "green"
+  showMenuItems = 5
+  fullWidthTheme = true
+  centerTheme = true
+  
+  # custom params
+  description = "A collection of my thoughts, projects, explorations and questions"
+  
+[languages]
+  [languages.en]
+    title = "Pew-X Tech Journal"
+    subtitle = "A matrix-inspired tech blog"
+    keywords = ""
+    copyright = ""
+    menuMore = "Show more"
+    readMore = "Read more"
+    readOtherPosts = "Read other posts"
+
+    [languages.en.params.logo]
+      logoText = "Pew-X Tech Journal"
+      logoHomeLink = "/"
+
+    [languages.en.menu]
+      [[languages.en.menu.main]]
+        identifier = "about"
+        name = "About"
+        url = "/about"
+        weight = 1
+      
+      [[languages.en.menu.main]]
+        identifier = "posts"
+        name = "Blog"
+        url = "/posts"
+        weight = 2
+      
+      [[languages.en.menu.main]]
+        identifier = "projects"
+        name = "Projects"
+        url = "/projects"
+        weight = 3
+      
+      [[languages.en.menu.main]]
+        identifier = "contact"
+        name = "Contact"
+        url = "/contact"
+        weight = 4

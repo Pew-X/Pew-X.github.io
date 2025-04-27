@@ -1,0 +1,48 @@
+
+{{ define "main" }}
+<div class="main-grid">
+  <div class="container intro-box">
+    <h2>{{ .Site.Title }}</h2>
+    <p>{{ .Site.Params.description }}</p>
+    <a href="/about" class="neon-button">READ MORE</a>
+  </div>
+
+  <div class="container about-box">
+    <h2>About Me</h2>
+    <p>Making the Most out of it.</p>
+    <a href="/about" class="neon-button">READ MORE ABOUT ME</a>
+  </div>
+
+  <div class="container logo-box">
+    <img src="/images/logo.svg" alt="Geometric Logo" class="geometric-logo">
+  </div>
+
+  <div class="container links-box">
+    <h2>Quick Links</h2>
+
+    <div class="quick-link">
+      <div>
+        <h3>Latest Projects</h3>
+        <p>Check out what I've been working on.</p>
+      </div>
+      <a href="/projects" class="neon-button">VIEW PROJECTS</a>
+    </div>
+
+    <div class="quick-link">
+      <div>
+        <h3>Blog—Just putting stuff out there</h3>
+        <p>Thoughts and Questions.</p>
+      </div>
+      <a href="/posts" class="neon-button">READ BLOG</a>
+    </div>
+
+    <div class="quick-link">
+      <div>
+        <h3>Contact Me</h3>
+        <p>Get in touch</p>
+      </div>
+      <a href="/contact" class="neon-button">CONTACT</a>
+    </div>
+  </div>
+</div>
+{{ end }}
